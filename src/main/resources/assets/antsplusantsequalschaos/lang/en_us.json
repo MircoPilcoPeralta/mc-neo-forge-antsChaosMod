@@ -1,0 +1,13 @@
+{
+  "itemGroup.antsplusantsequalschaos": "Example Mod Tab",
+  "block.antsplusantsequalschaos.example_block": "Example Block",
+  "item.antsplusantsequalschaos.example_item": "Example Item",
+
+  "antsplusantsequalschaos.configuration.title": "AntsPlusAntsEqualsChaos Configs",
+  "antsplusantsequalschaos.configuration.section.antsplusantsequalschaos.common.toml": "AntsPlusAntsEqualsChaos Configs",
+  "antsplusantsequalschaos.configuration.section.antsplusantsequalschaos.common.toml.title": "AntsPlusAntsEqualsChaos Configs",
+  "antsplusantsequalschaos.configuration.items": "Item List",
+  "antsplusantsequalschaos.configuration.logDirtBlock": "Log Dirt Block",
+  "antsplusantsequalschaos.configuration.magicNumberIntroduction": "Magic Number Text",
+  "antsplusantsequalschaos.configuration.magicNumber": "Magic Number"
+}
