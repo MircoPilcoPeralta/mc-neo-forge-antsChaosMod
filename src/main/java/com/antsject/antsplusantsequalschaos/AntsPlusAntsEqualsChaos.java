@@ -1,5 +1,6 @@
 package com.antsject.antsplusantsequalschaos;
 
+import com.antsject.antsplusantsequalschaos.entity.ant.config.AntEntitiesConfig;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -14,9 +15,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -75,6 +74,13 @@ public class AntsPlusAntsEqualsChaos {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        ////// REGISTERING THE MOBS
+        AntEntitiesConfig.ENTITIES.register(modEventBus);
+
+        ////// REGISTERING THE ATTRIBUTES FOR EACH ENTITY
+        modEventBus.addListener(AntEntitiesConfig::registerAttributes);
+
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (AntsPlusAntsEqualsChaos) to respond directly to events.
