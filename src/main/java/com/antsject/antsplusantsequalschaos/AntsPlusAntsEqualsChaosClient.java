@@ -1,5 +1,7 @@
 package com.antsject.antsplusantsequalschaos;
 
+import com.antsject.antsplusantsequalschaos.client.antExplorer.AntExplorerRenderer;
+import com.antsject.antsplusantsequalschaos.entity.ant.config.AntEntitiesConfig;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -7,6 +9,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -27,5 +30,16 @@ public class AntsPlusAntsEqualsChaosClient {
         // Some client setup code
         AntsPlusAntsEqualsChaos.LOGGER.info("HELLO FROM CLIENT SETUP");
         AntsPlusAntsEqualsChaos.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerEntityRenderers(
+            EntityRenderersEvent.RegisterRenderers event
+    ) {
+        event.registerEntityRenderer(
+                AntEntitiesConfig.ANT_EXPLORER.get(),
+                AntExplorerRenderer::new
+        );
+
     }
 }
